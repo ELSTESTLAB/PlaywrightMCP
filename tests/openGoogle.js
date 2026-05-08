@@ -81,3 +81,24 @@ test('create new user from Excel data', async ({ page }) => {
   // Optionally, assert that logout was successful
   await expect(page.locator('body')).toContainText(/login/i);
 });
+
+test('login to codeslaps.com with Excel credentials and verify login/logout', async ({ page }) => {
+  // Read Excel file
+  const workbook = XLSX.readFile('userData.xlsx');
+  const sheet = workbook.Sheets[workbook.SheetNames[0]];
+  const data = XLSX.utils.sheet_to_json(sheet)[0];
+
+  await page.goto('http://www.codeslaps.com/');
+  await page.getByRole('button', { name: /authenticate/i }).click();
+  await page.getByLabel('Email ID').fill(data.Email);
+  await page.getByLabel('Password').fill(data.Password);
+  await page.getByRole('button', { name: /login/i }).click();
+
+  // Assert successful login (adjust selector/text as needed)
+  await expect(page.locator('body')).toContainText(/welcome|dashboard|logout/i);
+
+  // Log out (adjust selector as needed)
+  await page.getByRole('button', { name: /logout/i }).click();
+  // Optionally, assert that logout was successful
+  await expect(page.locator('body')).toContainText(/login/i);
+});
