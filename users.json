@@ -1,0 +1,37 @@
+{
+  "john.doe@example.com": {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "John@123",
+    "designation": "Software Engineer",
+    "country": "USA"
+  },
+  "emma.smith@example.com": {
+    "name": "Emma Smith",
+    "email": "emma.smith@example.com",
+    "password": "Emma@456",
+    "designation": "QA Analyst",
+    "country": "United Kingdom"
+  },
+  "liam.brown@example.com": {
+    "name": "Liam Brown",
+    "email": "liam.brown@example.com",
+    "password": "Liam@789",
+    "designation": "Project Manager",
+    "country": "Canada"
+  },
+  "olivia.j@example.com": {
+    "name": "Olivia Johnson",
+    "email": "olivia.j@example.com",
+    "password": "Olivia@321",
+    "designation": "UI/UX Designer",
+    "country": "Australia"
+  },
+  "noah.w@example.com": {
+    "name": "Noah Wilson",
+    "email": "noah.w@example.com",
+    "password": "Noah@654",
+    "designation": "DevOps Engineer",
+    "country": "Germany"
+  }
+}
